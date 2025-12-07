@@ -1,7 +1,10 @@
 #ifndef _TYPES_H
 #define _TYPES_H
 
-typedef enum { False, True } Boolean;
+typedef bool Boolean;
+inline const bool False = false;
+inline const bool True = true;
+
 typedef struct {long int h, l; } LongInt;
 typedef struct {long int u, h, l; } DLongInt;
 

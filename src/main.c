@@ -938,6 +938,7 @@ void handle_packet (int fd) {
             return;
         }
     }
+
     c = cur_player->sock_buf_p;
 
     for (y = 0; y < x && c < (cur_player->sock_buffer + (MAX_COM_LEN-32))  &&

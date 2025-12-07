@@ -8,7 +8,7 @@
 
 #include "logconfig.h"
 
-#define MASTERUSER      "Master"	/* Name of the MASTER character */
+#define MASTERUSER      "Orange"	/* Name of the MASTER character */
 #define UNVEIL_PASS     "Password"	/* The UNVEIL-password.		*/
 
 #define PORT            6715		/* Port to use			*/

@@ -194,7 +194,7 @@ XOBJ *obj_list_l = NULL;	/* last */
 #define TOBJ_LINKED 15
 #define TOBJ_VIS 16
 
-char *Mob_tab[] =
+const char *Mob_tab[] =
 {
   "Name", "Pname", "Location", "Description", "End",
   "Strength", "Damage", "Armor", "Aggression", "SFlags",
@@ -202,7 +202,7 @@ char *Mob_tab[] =
   "Wimpy", "NFlags", "EFlags", TABLE_END
 };
 
-char *Obj_tab[] =
+const char *Obj_tab[] =
 {
   "Name", "Pname", "Location", "Description", "End",
   "AltName", "Oflags", "Armor", "Damage",
@@ -212,7 +212,7 @@ char *Obj_tab[] =
 };
 
 
-char *Cflags[] =
+const char *Cflags[] =
 {
   "In room", "In container", "Carried by", "Worn by",
   "Wielded by", "Both worn and wielded by"
@@ -244,15 +244,14 @@ compress_file (char *name, char *file)
 }
 
 void
-xexit (code)
-     int code;
+xexit (int code)
 {
   printf ("\n\n");
   exit (code);
 }
 
 #ifdef VARGS
-void log (char t, XOBJ * O, XZON * Z, char *f,...);
+void log (char t, XOBJ * O, XZON * Z, const char *f,...);
 
 #endif
 
@@ -261,9 +260,9 @@ void log (char t, XOBJ * O, XZON * Z, char *f,...);
  * **  Open file for read/write or die trying
  */
 static FILE *
-Do_fopen (char *name, char *mode)
+Do_fopen (const char *name, const char *mode)
 {
-  char *m;
+  const char *m;
   FILE *file;
   Boolean b;
 
@@ -324,7 +323,7 @@ char *
 get_fname (FILE * a, char *d)
 {
   char *p;
-  register char *q;
+  char *q;
   int c, k;
 
   while ((c = getc (a)) == ' ' || c == '\t') ;
@@ -350,7 +349,7 @@ char *
 get_text (FILE * a)
 {
   char *p;
-  register char *q;
+  char *q;
   int c, d;
 
   q = (p = textsp);
@@ -379,7 +378,7 @@ char *
 get_exam (FILE * a)
 {
   char *p;
-  register char *q;
+  char *q;
   int c, d;
 
   q = (p = textsp);
@@ -402,7 +401,7 @@ char *
 get_description (FILE * a)
 {
   char *p;
-  register char *q;
+  char *q;
   int c;
 
   q = (p = textsp);
@@ -426,7 +425,7 @@ get_description (FILE * a)
 }
 
 FILE *
-xopen (char *f, char *m)
+xopen (const char *f, const char *m)
 {
   FILE *x;
 
@@ -613,9 +612,9 @@ zone_open (char *fn, char *zn, Boolean * m, char *b, int bs)
 }
 
 int
-lookup (char *s, char **t)
+lookup (const char *s, const char **t)
 {
-  char **u;
+  const char **u;
   int l;
   int x;
 
@@ -791,7 +790,7 @@ get_int (FILE * F)
 }
 
 void
-get_flags (XZON * z, XMOB * m, char ty, int *f, int s, char **t, FILE * F)
+get_flags (XZON * z, XMOB * m, char ty, int *f, int s, const char **t, FILE * F)
 {
   char n[128];
   int c;
@@ -1801,7 +1800,7 @@ write_xobj (FILE * F, FILE * H, XOBJ * O, int obj_num)
   XMOB *M = NULL;
   XZON *Z = NULL;
   int x;
-  char *s;
+  const char *s;
   int obj_loc = 0;
   char n[64];
   char z[32];
@@ -1998,7 +1997,7 @@ write_loc (XZON * ZON, int numz, int l)
 	  y = DOOR + ((XOBJ *) L->exits[x])->obj;
 	  break;
 	case '#':
-	  y = (long) L->exits[x];
+	  y = (long) (L->exits[x]);
 	  break;
 	case ' ':
 	  y = -(L->exits[x]->loc);
@@ -2128,7 +2127,7 @@ make_data (int argc, char **argv)
 #ifdef VARGS
 
 void
-log (char t, XOBJ * O, XZON * Z, char *f,...)
+log (char t, XOBJ * O, XZON * Z, const char *f,...)
 {
   va_list pvar;
   char *n;
@@ -2167,7 +2166,7 @@ log (char t, XOBJ * O, XZON * Z, char *f,...)
 #else
 
 void
-log (char t, XOBJ * O, XZON * Z, char *f,
+log (char t, XOBJ * O, XZON * Z, const char *f,
      char *arg1, char *arg2, char *arg3, char *arg4)
 {
   char *n;

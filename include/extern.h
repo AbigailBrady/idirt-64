@@ -5,8 +5,8 @@ extern char     *pwait;
 extern char     *qwait;
 extern jmp_buf  to_main_loop;
 
-extern char    *Exits[];
-extern char    *exits[];
+extern const char    *Exits[];
+extern const char    *exits[];
 
 extern Location	   *room_data;
 extern Object	   *objects;
@@ -88,15 +88,15 @@ extern long	qdone;
 extern Boolean	breset;
 extern Boolean	norun;
 
-extern char *Pflags[];
-extern char *Sflags[];
-extern char *Mflags[];
-extern char *Nflags[];
-extern char *Eflags[];
-extern char *Iflags[];
-extern char *MLevels[]; /* Male mortal level names */
-extern char *FLevels[]; /* Female mortal level names */
-extern char *Quests[];
+extern const char *Pflags[];
+extern const char *Sflags[];
+extern const char *Mflags[];
+extern const char *Nflags[];
+extern const char *Eflags[];
+extern const char *Iflags[];
+extern const char *MLevels[]; /* Male mortal level names */
+extern const char *FLevels[]; /* Female mortal level names */
+extern const char *Quests[];
 
 extern int  DebugMode;
 extern int  DebugPlr;

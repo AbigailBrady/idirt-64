@@ -73,7 +73,7 @@ typedef struct _SETIN_REC {
 /* iDiRT Message System */
 typedef struct _MSGIDX {
   long		offset;
-  short		delete;
+  short		del;
 } MSGIDX;
 
 typedef struct _MAILMSG {

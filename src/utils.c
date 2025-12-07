@@ -26,7 +26,7 @@ cmp_player (const void *a, const void *b)
 int
 cmp_alpha (const void *a, const void *b)
 {
-  return (strcasecmp (a, b));
+  return (strcasecmp (static_cast<const char*>(a), static_cast<const char*>(b)));
 }
 
 /************************************************************************
@@ -429,7 +429,7 @@ void
 init_intset (int_set * p, int len)
 {
   p->len = p->current = 0;
-  p->list = resize_array (NULL, sizeof (int), 0, p->maxlen = len);
+  p->list = (int*)(resize_array (NULL, sizeof (int), 0, p->maxlen = len));
 }
 
 void
@@ -544,7 +544,7 @@ check_for_possible_resize (int_set * p)
     return False;
   }
 
-  p->list = resize_array (p->list, sizeof (int), oldlen, p->maxlen);
+  p->list = (int*)(resize_array (p->list, sizeof (int), oldlen, p->maxlen));
 
   return True;
 }

@@ -1,7 +1,7 @@
 #ifndef _LEVELNAMES_H
 #define _LEVELNAMES_H
 
-char *WizLevels[] = {
+const char *WizLevels[] = {
   NULL,
   "Apprentice",
   "Dorq",
