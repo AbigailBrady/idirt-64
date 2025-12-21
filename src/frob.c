@@ -95,7 +95,7 @@ frobcom (char *line)
     f->oldprompt = COPY (cur_player->cprompt);
     strcpy (cur_player->cprompt, "New Level: ");
     f->oldwork = cur_player->work;
-    cur_player->work = (int) f;
+    cur_player->work = (intptr_t) f;
     bprintf ("\001f" FROBCHT "\003");
     bprintf ("Level is: %d\n", f->level);
     push_input_handler (frobcom);

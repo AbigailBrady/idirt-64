@@ -1,6 +1,8 @@
 #ifndef _MUDTYPES_H
 #define _MUDTYPES_H
 
+#include <stdint.h>
+
 typedef	LongInt	 LFLAGS;
 typedef	DLongInt OFLAGS;
 typedef	DLongInt PFLAGS;
@@ -306,7 +308,7 @@ typedef struct _a_player {
   char		*sock_buf_end;
   void		*writer;	/* Current writer */
   int		no_logins;	/* No of failed passwd */
-  int		work;		/* General work area for use by code */
+  intptr_t		work;		/* General work area for use by code */
   char		work2[64];
   Boolean	no_echo;	/* True if telnet should turn off echo */
   Boolean	isawiz;		/* Is this player a system's wizard? */
