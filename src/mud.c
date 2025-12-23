@@ -341,7 +341,7 @@ login_ok (char *name)
   } else {
     bprintf ("\nAberMUD opens in %s  (on %s)\n",
 	     sec_to_str (round_to_min (next_event -
-				       time ((time_t) NULL))),
+				       time ((time_t*) NULL))),
 	     my_ctime (&next_event));
     bprintf ("Please come back then.\n\n");
   }
