@@ -51,7 +51,7 @@ bannedmsg (void)
 }
 
 static char *
-test1 (int plr, int vis, char *msg)
+test1 (int plr, intptr_t vis, char *msg)
 {
   if (ptstflg (plr, PFL_SEESOCKET) && ptstflg (plr, PFL_SEEUSER) && vis < plev (plr))
     return msg;
@@ -60,7 +60,7 @@ test1 (int plr, int vis, char *msg)
 }
 
 static char *
-test2 (int plr, int vis, char *msg)
+test2 (int plr, intptr_t vis, char *msg)
 {
   if (ptstflg (plr, PFL_SEESOCKET) && !ptstflg (plr, PFL_SEEUSER) && vis < plev (plr))
     return msg;

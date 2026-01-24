@@ -55,16 +55,16 @@ void sillycom(char *txt);
 void sillytp(int per, char *msg);
 
 void send_g_msg(int destination,
-		char *func(int plx, int arg, char *t),
-		int  arg,
+		char *func(int plx, intptr_t arg, char *t),
+		intptr_t arg,
 		char *text);
 
 #ifdef VARGS
 void sendf(int destination,char *format,...);
 
 void gsendf(int destination,
-	    char *func(int plx, int arg, char *text),
-	    int arg,
+	    char *func(int plx, intptr_t arg, char *text),
+	    intptr_t arg,
 	    char *format,...);
 
 void send_msg(int destination,
