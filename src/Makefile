@@ -323,7 +323,6 @@ commands.o: commands.c ../include/kernel.h ../include/VERSION.H \
  ../include/nflags.h ../include/fight.h ../include/zones.h \
  ../include/log.h ../include/reboot.h ../include/wizlist.h \
  ../include/climate.h ../include/mailer.h ../include/timing.h
-crypt.o: crypt.c
 exit.o: exit.c ../include/kernel.h ../include/VERSION.H \
  ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
  ../include/levels.h ../include/exits.h ../include/types.h \
@@ -576,7 +575,7 @@ utils.o: utils.c ../include/kernel.h ../include/VERSION.H \
  ../include/levels.h ../include/exits.h ../include/types.h \
  ../include/utils.h ../include/mudtypes.h ../include/mudmacros.h \
  ../include/macros.h ../include/extern.h ../include/files.h \
- ../include/global.h ../include/utils.h ../include/crypt.h
+ ../include/global.h ../include/utils.h 
 ver.o: ver.c LINKCOUNT.H ../include/kernel.h ../include/VERSION.H \
  ../include/MACHINE.H ../include/config.h ../include/logconfig.h \
  ../include/levels.h ../include/exits.h ../include/types.h \
