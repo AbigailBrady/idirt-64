@@ -1,6 +1,11 @@
-# iDirt Codebase - Modified to run on Ubuntu 18.04
+# iDirt Codebase - Modified to run on 64-bit Ubuntu 24LTS
 
 This is the original iDirt codebase, modified to run on a modern operating system. 
+
+
+Original instructions for Ubuntu 18 port made by Kenny, below:
+
+-- 
 
 A Dockerfile is included for generating a container image, in /abermud/Dockerfile
 
