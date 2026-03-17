@@ -40,7 +40,7 @@ extern char *Oflags[];
 /* The SYSTEM command
  */
 void
-systemcom ()
+systemcom (void)
 {
   char x[MAX_COM_LEN], y[MAX_COM_LEN];
 
@@ -59,7 +59,7 @@ systemcom ()
 /* Call For Reset
  */
 void
-cfrcom ()
+cfrcom (void)
 {
   char x[MAX_COM_LEN], y[MAX_COM_LEN];
 
@@ -75,7 +75,7 @@ cfrcom ()
 /* The RAW command
  */
 void
-rawcom ()
+rawcom (void)
 {
   char x[MAX_COM_LEN], y[MAX_COM_LEN];
 
@@ -92,7 +92,7 @@ rawcom ()
 /* The TXTRAW command
  */
 void
-textrawcom ()
+textrawcom (void)
 {
   char x[600], y[1000], send[1600];
 
@@ -118,7 +118,7 @@ textrawcom ()
 /* The TOURNAMENT Command. Toggle Tournament-mode.
  */
 void
-tournamentcom ()
+tournamentcom (void)
 {
   if (plev (mynum) < LVL_ARCHWIZARD) {
     erreval ();
@@ -216,7 +216,7 @@ syslogcom (void)
 
 /* (C) Rassilon (Brian Preble) */
 void
-echocom ()
+echocom (void)
 {
   char x[MAX_COM_LEN];
 
@@ -282,7 +282,7 @@ levechocom (void)
 
 /* (C) Rassilon (Brian Preble) */
 void
-echoallcom ()
+echoallcom (void)
 {
   char x[MAX_COM_LEN];
 
@@ -311,7 +311,7 @@ echoallcom ()
 
 /* (C) Rassilon (Brian Preble) */
 void
-echotocom ()
+echotocom (void)
 {
   int b;
 
@@ -358,7 +358,7 @@ echotocom ()
 
 /* (C) Jim Finnis  (Yes he really did write one or two routines/A) */
 void
-emotecom ()
+emotecom (void)
 {
   char buff[MAX_COM_LEN + 10];
 
@@ -382,7 +382,7 @@ emotecom ()
 
 /* (C) Rassilon (Brian Preble) */
 void
-emotetocom ()
+emotetocom (void)
 {
   int a;
 
@@ -450,7 +450,7 @@ static char *Props[] =
 };
 
 void
-setcom ()
+setcom (void)
 {
   int o, p, v;			/* Object, Property, Value */
 
@@ -614,7 +614,7 @@ setcom ()
 /* The SAVESET command.
  */
 void
-saveset ()
+saveset (void)
 {
   SETIN_REC s;
 
@@ -649,7 +649,7 @@ saveset ()
 
 
 void
-exorcom ()
+exorcom (void)
 {
   int x, q, y = real_mynum;
 
@@ -777,7 +777,7 @@ setstart (void)
 
 
 void
-noshoutcom ()
+noshoutcom (void)
 {
   int x;
 
@@ -878,7 +878,7 @@ showlocation (int o)
 /* The SHOW command.
  */
 void
-showitem ()
+showitem (void)
 {
   int x, i;
   OFLAGS *p;
@@ -937,7 +937,7 @@ showitem ()
 
 
 void
-wizlock ()
+wizlock (void)
 {
   extern char *WizLevels[];
   extern char *MLevels[];
@@ -998,7 +998,7 @@ wizlock ()
 }
 
 void
-warcom ()
+warcom (void)
 {
   if (plev (mynum) < LVL_WIZARD) {
     erreval ();
@@ -1009,7 +1009,7 @@ warcom ()
 }
 
 void
-peacecom ()
+peacecom (void)
 {
   int m;
 
@@ -1566,7 +1566,7 @@ puntallcom (void)
 }
 
 void
-litcom ()
+litcom (void)
 {
   if (plev (mynum) < LVL_WIZARD) {
     erreval ();
